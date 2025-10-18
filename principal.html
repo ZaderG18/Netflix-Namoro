@@ -6,171 +6,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio - Netflix</title>
     <link rel="shortcut icon" href="img/Logo-site.png">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="media.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
     <script type="text/javascript" src="script.js" defer></script>
 </head>
 
-<body class="tema-romantico">
+<body>
 
-<!--TOPO DA PAGINA, CABEÇARIO CONTENDO: LOGO/INICIO/SÉRIES/FILMES/(MINHA LISTA - APENAS NO PC) E TODOS OS LINKS REDIRECIONANDO PARA A PÁGINA PRINCIPAL-->
-
-    <header class="cabecario">
-        <ul class="cabecario__lista">
-            <li><img src="img/Nlogo.png" alt="Netflix logo" class="nlogo"><img src="img/Netflix_logo.png" alt="Netflix logo" class="cabecario__item container__logo sumir__mobile"></li>
-            <li class="cabecario__item"><a href="principal.html" class="cabecario__link">Início</a></li>
-            <li class="cabecario__item"><a href="principal.html" class="cabecario__link">Séries</a></li>
-            <li class="cabecario__item"><a href="principal.html" class="cabecario__link">Filmes</a></li>
-            <li class="cabecario__item mobile__sumir"><a href="principal.html" class="cabecario__link">Minha lista</a></li>
-        </ul>
+    <!-- 🌸 Cabeçalho -->
+    <header>
+        <div class="logo">N♥</div>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">Séries</a>
+            <a href="#">Filmes</a>
+            <a href="#">Minha Lista</a>
+        </nav>
     </header>
 
-<!--FILME EM EXIBIÇÃO COM UMA BACKGROUND DO FILME(NO CELULAR É OUTRO BACKGROUND) JUNTO COM UM BOTÃO PARA ASSISTIR E UM PARA (MAIS INFORMAÇÕES - NÃO ESTÁ FUNCIONANDO, FUTURAMENTE ESTARÁ)-->
-
-    <section class="container__background">
-        <div class="container">
-        <img src="img/Titulo.png" alt="Titulo" class="container__titulo">
-        <p class="container__texto__mobile">O filme de romance aclamado pela<br> crítica, com recordes de venda em<br> bilheteria, considerado uns dos<br> melhores filmes de romance.</p>
-        <p class="container__texto mobile__sumir">Nesta História vemos Como o romance mais lindo já existente teve sua origem,<br> onde Deus cruzou os caminhos de Arthur Henrique e Gabriela Oliveira</p>
-        <div class="container__botao">
-            <a href="filme5.html" class="botao__assistir"><img src="img/Play.png" class="play">Assistir</a> 
-            <button class="botao__assistir info"><img src="img/info.png" class="play"><p class="mais__info">Mais Informações</p></button>    
-        </div>
+    <!-- 💕 Seção principal -->
+    <section class="hero">
+        <div class="hero__conteudo">
+            <h1>Amor em Cenas</h1>
+            <p>Reviva as histórias mais intensas, doces e emocionantes do cinema romântico — agora em um só lugar.</p>
+            <button class="btn-assistir">Assistir agora</button>
         </div>
     </section>
 
-<!--SEÇÃO CONTENDO FILMES DO ASSISTIR NOVAMENTE(OS FILMES SÃO COLOCADOS MANUALMENTE)-->
-
-    <section class="container">
-        <p class="container__texto">Assistir novamente</p>
-        <ul class="container__lista">
-            
-            <li class="container__video">
-                <a href="filme1.html">
-                    <img src="img/video1.png" alt="Video" class="cropped">
-                    <div class="desc">Dois Malucos No Pedaço</div>
-                </a>
-            </li>
-
-            <li class="container__video">
-                <a href="filme2.html">
-                    <img src="img/video2.png" alt="Video" class="cropped">
-                    <div class="desc">Piscicopata Americana</div>
-                </a>
-            </li>
-
-            <li class="container__video">
-                <a href="filme3.html">
-                    <img src="img/video3.png" alt="Video" class="cropped">
-                    <div class="desc">A Princesa e o Sapo</div>
-                </a>
-            </li>
-
-            <li class="container__video">
-                <a href="filme4.html">
-                    <img src="img/video4.png" alt="Video" class="cropped">
-                    <div class="desc">Clube da Luta</div>
-                </a>
-            </li>
-        </ul>
-    </section>
-
-<!--SEÇÃO CONTENDO FILMES DA MINHA LISTA(OS FILMES SÃO COLOCADOS MANUALMENTE)-->
-
-    <section class="container">
-        <p class="container__texto">Minha Lista</p>
-        <ul class="container__lista">
-
-            <li class="container__video">
-                <a href="filme5.html">
-                    <img src="img/video5.png" alt="Video" class="cropped">
-                    <div class="desc">The First Love</div>
-                </a>
-            </li>
-
-            <li class="container__video">
-                <a href="filme4.html">
-                    <img src="img/video4.png" alt="Video" class="cropped">
-                    <div class="desc">Clube da Luta</div>
-                </a>
-            </li>
-
-            <li class="container__video">
-                <a href="filme2.html">
-                    <img src="img/video2.png" alt="Video" class="cropped">
-                    <div class="desc">Piscicopata Americana</div>
-                </a>
-            </li>
-
-        </ul>
-    </section>
-
-<!--SEÇÃO CONTENDO TODOS OS FILMES(OS FILMES SÃO COLOCADOS MANUALMENTE)-->
-
-    <section class="container">
-        <p class="container__texto">Todos os filmes</p>
-
-        <div id="carrosel">
-        <button type="button" id="btnleft"><img src="img/Carrosel-setae.png" alt="seta" class="botao__seta"></button>
-        <button type="button" id="btnright"><img src="img/Carrosel-setad.png" alt="seta" class="botao__seta"></button>
-
-        <div class="container__lista" id="container">
-
-            <div class="container__video carrossel_item">
-                <a href="filme1.html">
-                    <img src="img/video1.png" alt="Video" class="cropped">
-                    <div class="desc">Dois Malucos No Pedaço</div>
-                </a>
+    <!-- 💖 Filmes recomendados -->
+    <section class="secao">
+        <h2>Populares no momento</h2>
+        <div class="lista-filmes">
+            <div class="card-filme">
+                <img src="img/filme1.jpg" alt="Filme 1">
+                <h3>Entre Dois Amores</h3>
             </div>
-
-            <div class="container__video carrossel_item">
-                <a href="filme2.html">
-                    <img src="img/video2.png" alt="Video" class="cropped">
-                    <div class="desc">Piscicopata Americana</div>
-                </a>
+            <div class="card-filme">
+                <img src="img/filme2.jpg" alt="Filme 2">
+                <h3>Cartas para Você</h3>
             </div>
-
-            <div class="container__video carrossel_item">
-                <a href="filme3.html">
-                    <img src="img/video3.png" alt="Video" class="cropped">
-                    <div class="desc">A Princesa e o Sapo</div>
-                </a>
+            <div class="card-filme">
+                <img src="img/filme3.jpg" alt="Filme 3">
+                <h3>Amor à Meia-Noite</h3>
             </div>
-
-            <div class="container__video carrossel_item">
-                <a href="filme4.html">
-                    <img src="img/video4.png" alt="Video" class="cropped">
-                    <div class="desc">Clube da Luta</div>
-                </a>
+            <div class="card-filme">
+                <img src="img/filme4.jpg" alt="Filme 4">
+                <h3>Nosso Lugar</h3>
             </div>
-
-            <div class="container__video carrossel_item">
-                <a href="filme5.html">
-                    <img src="img/video5.png" alt="Video" class="cropped">
-                    <div class="desc">The First Love</div>
-                </a>
+            <div class="card-filme">
+                <img src="img/filme5.jpg" alt="Filme 5">
+                <h3>Antes do Amanhecer</h3>
             </div>
-
-            <div class="container__video carrossel_item">
-                <a href="filme4.html">
-                    <img src="img/video4.png" alt="Video" class="cropped">
-                    <div class="desc">Clube da Luta</div>
-                </a>
-            </div>
-        
-            <div id="limitador">limitador</div>
         </div>
-        </div>
-
     </section>
 
-<!--RODAPE DA PAGINA-->
+    <!-- 💫 Filmes clássicos -->
+    <section class="secao">
+        <h2>Clássicos do Romance</h2>
+        <div class="lista-filmes">
+            <div class="card-filme">
+                <img src="img/classico1.webp" alt="Filme clássico 1">
+                <h3>Titanic</h3>
+            </div>
+            <div class="card-filme">
+                <img src="img/classico2.webp" alt="Filme clássico 2">
+                <h3>Orgulho e Preconceito</h3>
+            </div>
+            <div class="card-filme">
+                <img src="img/classico3.jpg" alt="Filme clássico 3">
+                <h3>Diário de uma Paixão</h3>
+            </div>
+            <div class="card-filme">
+                <img src="img/classico4.jpg" alt="Filme clássico 4">
+                <h3>Ghost</h3>
+            </div>
+            <div class="card-filme">
+                <img src="img/classico5.jpg" alt="Filme clássico 5">
+                <h3>Um Lugar Chamado Notting Hill</h3>
+            </div>
+        </div>
+    </section>
 
-    <footer class="rodape">
-        <h2 class="rodape__texto">Em breve mais coisas(ou não)</h2> 
+    <!-- 🌙 Rodapé -->
+    <footer class="rodape" style="text-align:center; padding:40px; color:#888;">
+        <p>Feito com 💜 por você</p>
+        <p style="font-size: 0.9rem;">Netflix Romântica — Todos os direitos reservados © 2025</p>
     </footer>
+
 </body>
 </html>

@@ -1,0 +1,209 @@
+/* 🎬 Netflix Romântica - Estilo Moderno e Elegante */
+:root {
+    --fundo-principal: #0b0b0d;
+    --rosa-principal: #ff4fa3;
+    --roxo-suave: #b37bff;
+    --branco: #ffffff;
+    --cinza: #cccccc;
+    --cinza-escuro: #1b1b1d;
+    --transicao: 0.3s ease;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--fundo-principal);
+    font-family: 'Poppins', sans-serif;
+    color: var(--branco);
+    overflow-x: hidden;
+}
+
+/* 🌸 Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--rosa-principal);
+    letter-spacing: 1px;
+    transition: var(--transicao);
+}
+
+.logo:hover {
+    color: var(--roxo-suave);
+    text-shadow: 0 0 10px var(--rosa-principal);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--branco);
+    margin: 0 20px;
+    font-weight: 500;
+    transition: var(--transicao);
+}
+
+nav a:hover {
+    color: var(--rosa-principal);
+    text-shadow: 0 0 6px var(--rosa-principal);
+}
+
+/* 💖 Banner principal */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    background: linear-gradient(to top, rgba(11, 11, 13, 0.9), rgba(11, 11, 13, 0.3)),
+                url('../img/Background-principal.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: var(--branco);
+    text-shadow: 0 0 20px var(--roxo-suave);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--cinza);
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.btn-assistir {
+    background: linear-gradient(90deg, var(--rosa-principal), var(--roxo-suave));
+    border: none;
+    color: var(--branco);
+    padding: 14px 40px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transicao);
+    box-shadow: 0 0 15px rgba(255, 79, 163, 0.4);
+}
+
+.btn-assistir:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(179, 123, 255, 0.6);
+}
+
+/* 💕 Sessão de filmes */
+.secao {
+    margin-top: 100px;
+    padding: 60px;
+}
+
+.secao h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--rosa-principal);
+    text-shadow: 0 0 10px rgba(255, 79, 163, 0.5);
+}
+
+.lista-filmes {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+}
+
+.lista-filmes::-webkit-scrollbar {
+    height: 8px;
+}
+
+.lista-filmes::-webkit-scrollbar-thumb {
+    background: var(--roxo-suave);
+    border-radius: 4px;
+}
+
+.card-filme {
+    min-width: 200px;
+    height: 300px;
+    border-radius: 15px;
+    background-color: var(--cinza-escuro);
+    overflow: hidden;
+    position: relative;
+    transition: var(--transicao);
+}
+
+.card-filme img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transicao);
+}
+
+.card-filme:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.8);
+}
+
+.card-filme::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    opacity: 0;
+    transition: var(--transicao);
+}
+
+.card-filme:hover::after {
+    opacity: 1;
+}
+
+.card-filme h3 {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: var(--branco);
+    font-size: 1rem;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+}
+
+/* 💫 Animações suaves */
+@keyframes brilho {
+    0%, 100% { text-shadow: 0 0 10px var(--rosa-principal); }
+    50% { text-shadow: 0 0 20px var(--roxo-suave); }
+}
+
+/* 📱 Responsividade */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 30px;
+    }
+
+    nav a {
+        margin: 0 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .secao {
+        padding: 30px;
+    }
+
+    .card-filme {
+        min-width: 150px;
+        height: 220px;
+    }
+}
