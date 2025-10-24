@@ -39,3 +39,33 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. Encontra TODOS os containers de card
+    const cardContainers = document.querySelectorAll(".card-container");
+
+    // 2. Adiciona um "escutador" de clique em cada um
+    cardContainers.forEach(container => {
+        
+        // 3. Pega o link do atributo "data-link" que você colocou no HTML
+        const link = container.dataset.link;
+        
+        // Se não tiver um link, não faz nada
+        if (!link) {
+            return;
+        }
+
+        // 4. Adiciona o evento de clique
+        container.addEventListener("click", (event) => {
+            
+            // Ponto extra: Impede que o clique seja ativado se
+            // o usuário clicar em um botão (como o '💜' ou '+')
+            if (event.target.closest(".btn-icon")) {
+                return;
+            }
+
+            // 5. Redireciona a página para o link do filme
+            window.location.href = link;
+        });
+    });
+});
