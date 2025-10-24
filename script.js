@@ -1,85 +1,41 @@
-//variaveis de contagem da direção
+/* * JavaScript Otimizado para a Netflix Romântica
+ * Funciona para múltiplos carrosséis
+ */
 
-var num = 300;
-var num2 = 300;
+// Espera o HTML ser totalmente carregado antes de rodar o script
+document.addEventListener("DOMContentLoaded", () => {
 
-//slide do botão direito
+    // 1. Encontra TODAS as seções de carrossel na página
+    const secoes = document.querySelectorAll(".secao");
 
-var btnRight = document.getElementById('btnright');
+    // 2. Para cada seção, configura seus próprios botões
+    secoes.forEach(secao => {
+        
+        // 3. Encontra os elementos *dentro* desta seção específica
+        const listaFilmes = secao.querySelector(".lista-filmes");
+        const btnEsquerda = secao.querySelector(".btn-esquerda");
+        const btnDireita = secao.querySelector(".btn-direita");
 
-btnRight.addEventListener('click', () => {
+        // 4. Se a seção tiver todos os 3 elementos, continua
+        if (listaFilmes && btnEsquerda && btnDireita) {
 
-    var limi = document.getElementById('limitador').getBoundingClientRect().left;
+            // 5. Adiciona o clique no botão DIREITO
+            btnDireita.addEventListener("click", () => {
+                // Calcula o quanto rolar (80% da largura visível da lista)
+                const scrollAmount = listaFilmes.clientWidth * 0.8;
+                
+                // Aplica a rolagem (o CSS cuida da animação suave)
+                listaFilmes.scrollLeft += scrollAmount;
+            });
 
-    var limit = Math.round(limi);
-
-    var er = document.getElementById('btnright').getBoundingClientRect().left;
-
-    var ref = Math.round(er);
-
-    var slideContainer = document.getElementById('container');
-
-    var carrossel = document.getElementById('carrossel');
-
-
-    if (limit > ref) {
-
-        slideContainer.style.transform = 'translateX(-' + num + 'px)';
-
-        num = num + 300;
-
-        num2 = num2 - 300;
-
-    } else {
-
-        var stoped = ref * slideContainer.clientWidth / carrossel.clientWidth - carrossel.clientWidth + 100;
-
-        var stopedRound = Mtah.round(stoped);
-
-        slideContainer.style.transform = 'translateX(-' + stopedRound + 'px)';
-
-
-    }
-
-
-});
-
-
-//slide botão esquerdo
-
-var btnLeft = document.getElementById('btnleft');
-
-btnLeft.addEventListener('click', () => {
-
-
-    var limi = document.getElementById('limitador').getBoundingClientRect().left;
-
-    var limit = Math.round(limi);
-
-    var er = document.getElementById('btnleft').getBoundingClientRect().left;
-
-    var ref = Math.round(er);
-
-    var slideContainer = document.getElementById('container');
-
-    var carrossel = document.getElementById('carrossel');
-
-    var slide = slideContainer.getBoundingClientRect().left;
-
-    if (slide < ref) {
-
-        slideContainer.style.transform = 'translateX(' + num2 + 'px)';
-
-        num = num - 300;
-        num2 = num2 + 300;
-
-    } else {
-
-        slideContainer.style.transform = 'translateX(0)';
-
-        num = 300;
-
-    }
-
-
+            // 6. Adiciona o clique no botão ESQUERDO
+            btnEsquerda.addEventListener("click", () => {
+                // Calcula o quanto rolar (80% da largura visível da lista)
+                const scrollAmount = listaFilmes.clientWidth * 0.8;
+                
+                // Aplica a rolagem (o CSS cuida da animação suave)
+                listaFilmes.scrollLeft -= scrollAmount;
+            });
+        }
+    });
 });

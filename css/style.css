@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* 🎬 Netflix Romântica - Estilo Moderno e Elegante */
+/* 🎬 Netflix Romântica - Estilo Moderno e Elegante (Versão Final Limpa) */
 :root {
   --fundo-principal: #0b0b0d;
   --rosa-principal: #ff4fa3;
@@ -14,7 +14,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--fundo-principal);
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: var(--branco);
   overflow-x: hidden;
 }
@@ -40,6 +40,7 @@ header {
   color: var(--rosa-principal);
   letter-spacing: 1px;
   transition: var(--transicao);
+  text-decoration: none; /* Adicionado para o link <a> */
 }
 
 .logo:hover {
@@ -71,6 +72,7 @@ nav a:hover {
   justify-content: center;
   text-align: center;
   padding-top: 80px;
+  box-sizing: border-box;
 }
 
 .hero h1 {
@@ -98,6 +100,7 @@ nav a:hover {
   cursor: pointer;
   transition: var(--transicao);
   box-shadow: 0 0 15px rgba(255, 79, 163, 0.4);
+  text-decoration: none; /* Adicionado para o link <a> */
 }
 
 .btn-assistir:hover {
@@ -107,12 +110,15 @@ nav a:hover {
 
 /* 💕 Sessão de filmes */
 .secao {
-  margin-top: 100px;
-  padding: 60px;
+  position: relative;
+  margin-bottom: 40px;
+  padding: 0 60px;
+  box-sizing: border-box;
 }
 
 .secao h2 {
   font-size: 1.8rem;
+  margin-top: 0;
   margin-bottom: 20px;
   color: var(--rosa-principal);
   text-shadow: 0 0 10px rgba(255, 79, 163, 0.5);
@@ -121,9 +127,11 @@ nav a:hover {
 .lista-filmes {
   display: flex;
   gap: 20px;
-  overflow-x: auto;
+  overflow-x: hidden;
   scroll-behavior: smooth;
-  padding-bottom: 10px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  margin-top: -100px;
 }
 
 .lista-filmes::-webkit-scrollbar {
@@ -135,52 +143,213 @@ nav a:hover {
   border-radius: 4px;
 }
 
-.card-filme {
+/* --- EFEITOS DE HOVER NO CARD (NOVO) --- */
+.card-container {
+  position: relative;
   min-width: 200px;
   height: 300px;
-  border-radius: 15px;
-  background-color: var(--cinza-escuro);
-  overflow: hidden;
-  position: relative;
   transition: var(--transicao);
+  z-index: 1;
+  border-radius: 8px;
 }
 
-.card-filme img {
+.card-thumbnail {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  transition: var(--transicao);
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-.card-filme:hover img {
-  transform: scale(1.1);
-  filter: brightness(0.8);
-}
-
-.card-filme::after {
-  content: "";
+.card-hover-preview {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  top: -30%; /* Puxa para cima */
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  transform-origin: center;
+  width: 320px;
+  background-color: var(--cinza-escuro);
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
   opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease-out;
+  z-index: 10;
+}
+
+.card-container:hover {
+  z-index: 15;
+}
+
+.card-container:hover .card-hover-preview {
+  opacity: 1;
+  transform: translateX(-50%) scale(1.05); /* Efeito "pop" */
+  pointer-events: auto;
+  transition-delay: 0.4s;
+}
+
+.hover-preview-media {
+  position: relative;
+  width: 100%;
+  height: 180px; /* Define a altura da imagem/preview */
+}
+
+.hover-preview-media img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px 8px 0 0; /* Arredonda cantos de cima */
+}
+
+.play-icon-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: var(--branco);
+  text-decoration: none;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  opacity: 0.8;
   transition: var(--transicao);
 }
 
-.card-filme:hover::after {
+.play-icon-overlay:hover {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.hover-preview-info {
+  padding: 15px;
+}
+
+.hover-title {
+  font-size: 1.3rem;
+  color: var(--branco);
+  margin: 0 0 15px;
+  font-weight: 600;
+}
+
+.hover-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.btn-icon {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid var(--cinza);
+  color: var(--branco);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: var(--transicao);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btn-icon:hover {
+  border-color: var(--rosa-principal);
+  color: var(--rosa-principal);
+  background-color: rgba(255, 79, 163, 0.1);
+}
+
+.btn-icon.play {
+  background-color: var(--branco);
+  color: var(--fundo-principal);
+  border-color: var(--branco);
+  font-size: 1.5rem;
+}
+
+.btn-icon.play:hover {
+  background-color: var(--rosa-principal);
+  border-color: var(--rosa-principal);
+  color: var(--branco);
+}
+
+.hover-details {
+  display: flex;
+  gap: 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.detail-rating {
+  border: 1px solid var(--cinza);
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+}
+
+.hover-tags {
+  font-size: 0.8rem;
+  color: var(--cinza);
+  font-weight: 300;
+}
+
+.hover-tags span:not(:last-child)::after {
+  content: " • ";
+  margin: 0 5px;
+}
+
+/* --- Botões do Carrossel --- */
+.btn-carrossel {
+  position: absolute;
+  top: calc(50% + 10px);
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 45px;
+  height: 70px;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: var(--branco);
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transicao);
+  opacity: 0;
+  border-radius: 4px;
+}
+
+.secao:hover .btn-carrossel {
   opacity: 1;
 }
 
-.card-filme h3 {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  color: var(--branco);
-  font-size: 1rem;
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+.btn-carrossel:hover {
+  background: rgba(0, 0, 0, 0.8);
+  color: var(--rosa-principal);
 }
 
-/* 💫 Animações suaves */
+.btn-esquerda {
+  left: 10px;
+}
+
+.btn-direita {
+  right: 10px;
+}
+
+/* --- Rodapé --- */
+.rodape {
+  text-align: center;
+  padding: 40px;
+  color: #888;
+  background-color: var(--fundo-principal);
+  margin-top: 60px;
+}
+
+.rodape-copyright {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* --- Animações --- */
 @keyframes brilho {
   0%, 100% {
     text-shadow: 0 0 10px var(--rosa-principal);
@@ -189,7 +358,7 @@ nav a:hover {
     text-shadow: 0 0 20px var(--roxo-suave);
   }
 }
-/* 📱 Responsividade */
+/* 📱 RESPONSIVIDADE (Unificada) */
 @media (max-width: 768px) {
   header {
     padding: 15px 30px;
@@ -197,14 +366,42 @@ nav a:hover {
   nav a {
     margin: 0 10px;
   }
+  /* Esconde o logo grande no mobile (regra do media.css) */
+  .container__logo {
+    display: none;
+  }
+  /* Mostra o logo "N" (regra do media.css) */
+  .nlogo {
+    display: block;
+    width: 20px;
+    margin: 0 10px 0 0;
+  }
+  .cabecario__item {
+    margin: 0 8%;
+  }
+  .mobile__sumir {
+    display: none;
+  }
   .hero h1 {
     font-size: 2.2rem;
   }
-  .secao {
-    padding: 30px;
+  .hero {
+    background-image: linear-gradient(to top, rgba(11, 11, 13, 0.9), rgba(11, 11, 13, 0.3)), url("../img/Background-principalMobile.jpg");
   }
-  .card-filme {
+  .secao {
+    padding: 0 30px;
+  }
+  .card-container {
     min-width: 150px;
     height: 220px;
+  }
+  .card-hover-preview {
+    display: none; /* Desativa hover flutuante no mobile */
+  }
+  .lista-filmes {
+    overflow-x: auto; /* Reativa barra de rolagem */
+  }
+  .btn-carrossel {
+    display: none; /* Esconde setas no mobile */
   }
 }/*# sourceMappingURL=style.css.map */

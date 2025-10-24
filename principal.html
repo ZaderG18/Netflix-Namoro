@@ -5,9 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio - Netflix</title>
-    <link rel="shortcut icon" href="img/Logo-site.png">
+    <link rel="shortcut icon" href="img/Logo-site.png">    
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/media.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
@@ -16,84 +15,329 @@
 
 <body>
 
-    <!-- 🌸 Cabeçalho -->
     <header>
-        <div class="logo">N♥</div>
+        <a href="principal.html" class="logo">N♥</a>
         <nav>
-            <a href="#">Início</a>
-            <a href="#">Séries</a>
-            <a href="#">Filmes</a>
-            <a href="#">Minha Lista</a>
+            <a href="principal.html">Início</a>
+            <a href="principal.html">Séries</a>
+            <a href="principal.html">Filmes</a>
+            <a href="principal.html">Minha Lista</a>
         </nav>
     </header>
 
-    <!-- 💕 Seção principal -->
-    <section class="hero">
-        <div class="hero__conteudo">
-            <h1>Amor em Cenas</h1>
-            <p>Reviva as histórias mais intensas, doces e emocionantes do cinema romântico — agora em um só lugar.</p>
-            <button class="btn-assistir">Assistir agora</button>
-        </div>
-    </section>
+    <main>
 
-    <!-- 💖 Filmes recomendados -->
-    <section class="secao">
-        <h2>Populares no momento</h2>
-        <div class="lista-filmes">
-            <div class="card-filme">
-                <img src="img/filme1.jpg" alt="Filme 1">
-                <h3>Entre Dois Amores</h3>
+        <section class="hero">
+            <div class="hero__conteudo">
+                <h1>Amor em Cenas</h1>
+                <p>Reviva as histórias mais intensas, doces e emocionantes do cinema romântico — agora em um só lugar.</p>
+                <a href="filme1.html" class="btn-assistir">Assistir agora</a>
             </div>
-            <div class="card-filme">
-                <img src="img/filme2.jpg" alt="Filme 2">
-                <h3>Cartas para Você</h3>
-            </div>
-            <div class="card-filme">
-                <img src="img/filme3.jpg" alt="Filme 3">
-                <h3>Amor à Meia-Noite</h3>
-            </div>
-            <div class="card-filme">
-                <img src="img/filme4.jpg" alt="Filme 4">
-                <h3>Nosso Lugar</h3>
-            </div>
-            <div class="card-filme">
-                <img src="img/filme5.jpg" alt="Filme 5">
-                <h3>Antes do Amanhecer</h3>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 💫 Filmes clássicos -->
-    <section class="secao">
-        <h2>Clássicos do Romance</h2>
-        <div class="lista-filmes">
-            <div class="card-filme">
-                <img src="img/classico1.webp" alt="Filme clássico 1">
-                <h3>Titanic</h3>
-            </div>
-            <div class="card-filme">
-                <img src="img/classico2.webp" alt="Filme clássico 2">
-                <h3>Orgulho e Preconceito</h3>
-            </div>
-            <div class="card-filme">
-                <img src="img/classico3.jpg" alt="Filme clássico 3">
-                <h3>Diário de uma Paixão</h3>
-            </div>
-            <div class="card-filme">
-                <img src="img/classico4.jpg" alt="Filme clássico 4">
-                <h3>Ghost</h3>
-            </div>
-            <div class="card-filme">
-                <img src="img/classico5.jpg" alt="Filme clássico 5">
-                <h3>Um Lugar Chamado Notting Hill</h3>
-            </div>
-        </div>
-    </section>
+        <section class="secao">
+            <h2>Populares no momento</h2>
+            
+            <button class="btn-carrossel btn-esquerda" aria-label="Rolar para esquerda">&lt;</button>
+            
+            <div class="lista-filmes">
+                
+                <div class="card-container">
+                    <img src="img/filme1.jpg" alt="Entre Dois Amores" class="card-thumbnail">
+                    <div class="card-hover-preview">
+                        <div class="hover-preview-media">
+                            <img src="img/filme1.jpg" alt="">
+                            <a href="filme1.html" class="play-icon-overlay">▶</a>
+                        </div>
+                        <div class="hover-preview-info">
+                            <h3 class="hover-title">Entre Dois Amores</h3>
+                            <div class="hover-buttons">
+                                <a href="filme1.html" class="btn-icon play" aria-label="Assistir">▶</a>
+                                <button class="btn-icon" aria-label="Adicionar à lista">+</button>
+                                <button class="btn-icon" aria-label="Gostei">💜</button> 
+                            </div>
+                            <div class="hover-details">
+                                <span class="detail-rating">A10</span>
+                                <span class="detail-seasons">1 Momento</span>
+                                <span>HD</span>
+                            </div>
+                            <div class="hover-tags">
+                                <span>Romântico</span>
+                                <span>Nostálgico</span>
+                                <span>Nosso</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- 🌙 Rodapé -->
-    <footer class="rodape" style="text-align:center; padding:40px; color:#888;">
+                <div class="card-container">
+                    <img src="img/filme2.jpg" alt="Cartas para você" class="card-thumbnail">
+                    <div class="card-hover-preview">
+                        <div class="hover-preview-media">
+                            <img src="img/filme2.jpg" alt="">
+                            <a href="filme2.html" class="play-icon-overlay">▶</a>
+                        </div>
+                        <div class="hover-preview-info">
+                            <h3 class="hover-title">Cartas para você</h3>
+                            <div class="hover-buttons">
+                                <a href="filme2.html" class="btn-icon play" aria-label="Assistir">▶</a>
+                                <button class="btn-icon" aria-label="Adicionar à lista">+</button>
+                                <button class="btn-icon" aria-label="Gostei">💜</button> 
+                            </div>
+                            <div class="hover-details">
+                                <span class="detail-rating">A10</span>
+                                <span class="detail-seasons">1 Momento</span>
+                                <span>HD</span>
+                            </div>
+                            <div class="hover-tags">
+                                <span>Fofo</span>
+                                <span>Engraçado</span>
+                                <span>Nosso</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-container">
+                    <img src="img/filme3.jpg" alt="Amor a meia-noite" class="card-thumbnail">
+                    <div class="card-hover-preview">
+                        <div class="hover-preview-media">
+                            <img src="img/filme3.jpg" alt="">
+                            <a href="filme3.html" class="play-icon-overlay">▶</a>
+                        </div>
+                        <div class="hover-preview-info">
+                            <h3 class="hover-title">Amor a meia-noite</h3>
+                            <div class="hover-buttons">
+                                <a href="filme3.html" class="btn-icon play" aria-label="Assistir">▶</a>
+                                <button class="btn-icon" aria-label="Adicionar à lista">+</button>
+                                <button class="btn-icon" aria-label="Gostei">💜</button> 
+                            </div>
+                            <div class="hover-details">
+                                <span class="detail-rating">A10</span>
+                                <span class="detail-seasons">1 Momento</span>
+                                <span>HD</span>
+                            </div>
+                            <div class="hover-tags">
+                                <span>Lindo</span>
+                                <span>Noite</span>
+                                <span>Nosso</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-container">
+                    <img src="img/filme4.jpg" alt="Nosso Lugar" class="card-thumbnail">
+                    <div class="card-hover-preview">
+                        <div class="hover-preview-media">
+                            <img src="img/filme4.jpg" alt="">
+                            <a href="filme4.html" class="play-icon-overlay">▶</a>
+                        </div>
+                        <div class="hover-preview-info">
+                            <h3 class="hover-title">Nosso Lugar</h3>
+                            <div class="hover-buttons">
+                                <a href="filme4.html" class="btn-icon play" aria-label="Assistir">▶</a>
+                                <button class="btn-icon" aria-label="Adicionar à lista">+</button>
+                                <button class="btn-icon" aria-label="Gostei">💜</button> 
+                            </div>
+                            <div class="hover-details">
+                                <span class="detail-rating">A10</span>
+                                <span class="detail-seasons">1 Momento</span>
+                                <span>HD</span>
+                            </div>
+                            <div class="hover-tags">
+                                <span>Elegantes</span>
+                                <span>Especial</span>
+                                <span>Nosso</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-container">
+                    <img src="img/filme5.jpg" alt="Antes do amanhecer" class="card-thumbnail">
+                    <div class="card-hover-preview">
+                        <div class="hover-preview-media">
+                            <img src="img/filme5.jpg" alt="">
+                            <a href="filme5.html" class="play-icon-overlay">▶</a>
+                        </div>
+                        <div class="hover-preview-info">
+                            <h3 class="hover-title">Antes do amanhecer</h3>
+                            <div class="hover-buttons">
+                                <a href="filme5.html" class="btn-icon play" aria-label="Assistir">▶</a>
+                                <button class="btn-icon" aria-label="Adicionar à lista">+</button>
+                                <button class="btn-icon" aria-label="Gostei">💜</button> 
+                            </div>
+                            <div class="hover-details">
+                                <span class="detail-rating">A10</span>
+                                <span class="detail-seasons">1 Momento</span>
+                                <span>HD</span>
+                            </div>
+                            <div class="hover-tags">
+                                <span>Juntos</span>
+                                <span>Viagem</span>
+                                <span>Nosso</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="btn-carrossel btn-direita" aria-label="Rolar para direita">&gt;</button>
+        </section>
+
+        <section class="secao">
+            <h2>Clássicos do Romance</h2>
+            
+            <button class="btn-carrossel btn-esquerda" aria-label="Rolar para esquerda">&lt;</button>
+            
+            <div class="lista-filmes">
+            
+                <div class="card-container">
+                    <img src="img/classico1.webp" alt="Titanic" class="card-thumbnail">
+                    <div class="card-hover-preview">
+                        <div class="hover-preview-media">
+                            <img src="img/classico1.webp" alt="">
+                            <a href="#" class="play-icon-overlay">▶</a>
+                        </div>
+                        <div class="hover-preview-info">
+                            <h3 class="hover-title">Titanic</h3>
+                            <div class="hover-buttons">
+                                <a href="#" class="btn-icon play" aria-label="Assistir">▶</a>
+                                <button class="btn-icon" aria-label="Adicionar à lista">+</button>
+                                <button class="btn-icon" aria-label="Gostei">💜</button> 
+                            </div>
+                            <div class="hover-details">
+                                <span class="detail-rating">L</span>
+                                <span class="detail-seasons">Clássico</span>
+                                <span>HD</span>
+                            </div>
+                            <div class="hover-tags">
+                                <span>Inseparáveis</span>
+                                <span>Com ela ♥</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-container">
+                    <img src="img/classico2.webp" alt="Orgulho e Preconceito" class="card-thumbnail">
+                    <div class="card-hover-preview">
+                        <div class="hover-preview-media">
+                            <img src="img/classico2.webp" alt="">
+                            <a href="#" class="play-icon-overlay">▶</a>
+                        </div>
+                        <div class="hover-preview-info">
+                            <h3 class="hover-title">Orgulho e Preconceito</h3>
+                            <div class="hover-buttons">
+                                <a href="#" class="btn-icon play" aria-label="Assistir">▶</a>
+                                <button class="btn-icon" aria-label="Adicionar à lista">+</button>
+                                <button class="btn-icon" aria-label="Gostei">💜</button> 
+                            </div>
+                            <div class="hover-details">
+                                <span class="detail-rating">L</span>
+                                <span class="detail-seasons">Clássico</span>
+                                <span>HD</span>
+                            </div>
+                            <div class="hover-tags">
+                                <span>Caretas</span>
+                                <span>Beijos</span>
+                                <span>Memórias</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-container">
+                    <img src="img/classico3.jpg" alt="Diário de uma Paixão" class="card-thumbnail">
+                    <div class="card-hover-preview">
+                        <div class="hover-preview-media">
+                            <img src="img/classico3.jpg" alt="">
+                            <a href="#" class="play-icon-overlay">▶</a>
+                        </div>
+                        <div class="hover-preview-info">
+                            <h3 class="hover-title">Diário de uma Paixão</h3>
+                            <div class="hover-buttons">
+                                <a href="#" class="btn-icon play" aria-label="Assistir">▶</a>
+                                <button class="btn-icon" aria-label="Adicionar à lista">+</button>
+                                <button class="btn-icon" aria-label="Gostei">💜</button> 
+                            </div>
+                            <div class="hover-details">
+                                <span class="detail-rating">L</span>
+                                <span class="detail-seasons">Clássico</span>
+                                <span>HD</span>
+                            </div>
+                            <div class="hover-tags">
+                                <span>Romance</span>
+                                <span>Drama</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-container">
+                    <img src="img/classico4.jpg" alt="Ghost" class="card-thumbnail">
+                    <div class="card-hover-preview">
+                        <div class="hover-preview-media">
+                            <img src="img/classico4.jpg" alt="">
+                            <a href="#" class="play-icon-overlay">▶</a>
+                        </div>
+                        <div class="hover-preview-info">
+                            <h3 class="hover-title">Ghost</h3>
+                            <div class="hover-buttons">
+                                <a href="#" class="btn-icon play" aria-label="Assistir">▶</a>
+                                <button class="btn-icon" aria-label="Adicionar à lista">+</button>
+                                <button class="btn-icon" aria-label="Gostei">💜</button> 
+                            </div>
+                            <div class="hover-details">
+                                <span class="detail-rating">L</span>
+                                <span class="detail-seasons">Clássico</span>
+                                <span>HD</span>
+                            </div>
+                            <div class="hover-tags">
+                                <span>Sobrenatural</span>
+                                <span>Amor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-container">
+                    <img src="img/classico5.jpg" alt="Um Lugar Chamado Notting Hill" class="card-thumbnail">
+                    <div class="card-hover-preview">
+                        <div class="hover-preview-media">
+                            <img src="img/classico5.jpg" alt="">
+                            <a href="#" class="play-icon-overlay">▶</a>
+                        </div>
+                        <div class="hover-preview-info">
+                            <h3 class="hover-title">Um Lugar Chamado Notting Hill</h3>
+                            <div class="hover-buttons">
+                                <a href="#" class="btn-icon play" aria-label="Assistir">▶</a>
+                                <button class="btn-icon" aria-label="Adicionar à lista">+</button>
+                                <button class="btn-icon" aria-label="Gostei">💜</button> 
+                            </div>
+                            <div class="hover-details">
+                                <span class="detail-rating">L</span>
+                                <span class="detail-seasons">Clássico</span>
+                                <span>HD</span>
+                            </div>
+                            <div class="hover-tags">
+                                <span>Comédia Romântica</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <button class="btn-carrossel btn-direita" aria-label="Rolar para direita">&gt;</button>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
         <p>Feito com 💜 por você</p>
-        <p style="font-size: 0.9rem;">Netflix Romântica — Todos os direitos reservados © 2025</p>
+        <p class="rodape-copyright">Netflix Romântica — Todos os direitos reservados © 2025</p>
     </footer>
 
 </body>

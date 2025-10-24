@@ -7,7 +7,7 @@
     <title>Filme - Netflix</title>
     <link rel="shortcut icon" href="img/Logo-site.png">
     <link rel="stylesheet" href="css/filmes.css">
-    <link rel="stylesheet" href="css/media.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
@@ -15,11 +15,14 @@
 
 <body>
 
-<!--TOPO DA PAGINA, CABEÇARIO CONTENDO: LOGO/INICIO/SÉRIES/FILMES/(MINHA LISTA - APENAS NO PC) E TODOS OS LINKS REDIRECIONANDO PARA A PÁGINA PRINCIPAL-->
-
     <header class="cabecario">
         <ul class="cabecario__lista">
-            <li><img src="img/Nlogo.png" alt="Netflix logo" class="nlogo"><img src="img/Netflix_logo.png" alt="Netflix logo" class="cabecario__item container__logo sumir__mobile"></li>
+            <li class="cabecario__item">
+                <a href="principal.html" aria-label="Netflix - Voltar ao Início">
+                    <img src="img/Nlogo.png" alt="Logo N" class="nlogo">
+                    <img src="img/Netflix_logo.png" alt="Logo Netflix" class="container__logo sumir__mobile">
+                </a>
+            </li>
             <li class="cabecario__item"><a href="principal.html" class="cabecario__link">Início</a></li>
             <li class="cabecario__item"><a href="principal.html" class="cabecario__link">Séries</a></li>
             <li class="cabecario__item"><a href="principal.html" class="cabecario__link">Filmes</a></li>
@@ -27,16 +30,14 @@
         </ul>
     </header>
 
-<!--VÍDEO PARA SER ASSISTIDO-->
-
-    <section class="filme">
-        <video src="vid/filme1.mp4" controls="controls" autoplay="autoplay" class="filme5"></video>
-    </section>
-
-<!--RODAPE-->
+    <main class="filme">
+        <video src="vid/filme1.mp4" controls autoplay muted class="filme5">
+            Seu navegador não suporta o player de vídeo.
+        </video>
+    </main>
 
     <footer class="rodape">
-        <h2 class="rodape__texto">Em breve mais coisas(ou não)</h2> 
+        <p class="rodape__texto">Em breve mais coisas(ou não)</p> 
     </footer>
 </body>
 </html>

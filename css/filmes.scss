@@ -1,12 +1,14 @@
-/* 🎬 Netflix Romântica – Tela do Filme */
+/* 🎬 Netflix Romântica – Tela do Filme (Corrigido e Otimizado) */
 
-/* ========== VARIÁVEIS DE CORES ========== */
+/* ========== VARIÁVEIS DE CORES (Unificadas com style.css) ========== */
 :root {
-    --fundo: #0b0b0d;
-    --rosa: #ff7da6;
-    --rosa-claro: #ffc4d6;
-    --cinza-secundario: #b3b3b3;
-    --branco-terciario: #ffffff;
+    --fundo-principal: #0b0b0d;
+    --rosa-principal: #ff4fa3;  /* Cor principal unificada */
+    --roxo-suave: #b37bff;      /* Cor secundária unificada */
+    --branco: #ffffff;
+    --cinza: #cccccc;
+    --cinza-escuro: #1b1b1d;
+    --transicao: 0.3s ease;
 }
 
 /* ========== RESET E BASE ========== */
@@ -18,8 +20,8 @@
 }
 
 body {
-    background: var(--fundo);
-    color: var(--branco-terciario);
+    background: var(--fundo-principal); /* Variável corrigida */
+    color: var(--branco);               /* Variável corrigida */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -32,8 +34,9 @@ body {
     width: 100%;
     background: rgba(11, 11, 13, 0.85);
     backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(255, 125, 166, 0.2);
-    box-shadow: 0 2px 10px rgba(255, 125, 166, 0.15);
+    /* Sombra usando a cor principal */
+    border-bottom: 1px solid rgba(255, 79, 163, 0.2); 
+    box-shadow: 0 2px 10px rgba(255, 79, 163, 0.15);
     z-index: 10;
 }
 
@@ -52,7 +55,8 @@ body {
     height: auto;
     margin-right: 5px;
     vertical-align: middle;
-    filter: drop-shadow(0 0 8px var(--rosa));
+    /* Sombra usando a cor principal */
+    filter: drop-shadow(0 0 8px var(--rosa-principal)); 
     transition: transform 0.3s ease;
 }
 
@@ -71,48 +75,51 @@ body {
 
 .cabecario__link {
     text-decoration: none;
-    color: var(--branco-terciario);
+    color: var(--branco); /* Variável corrigida */
     font-weight: 500;
     letter-spacing: 0.3px;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .cabecario__link:hover {
-    color: var(--rosa);
-    text-shadow: 0 0 8px var(--rosa);
+    color: var(--rosa-principal); /* Variável corrigida */
+    text-shadow: 0 0 8px var(--rosa-principal); /* Variável corrigida */
 }
 
-// /* ========== SEÇÃO DO FILME ========== */
-// .filme {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     flex: 1;
-//     padding-top: 120px;
-//     background: linear-gradient(to bottom, #0b0b0d, #1a0f13);
-// }
+/* ========== SEÇÃO DO FILME (CORRIGIDO) ========== */
+/* O bloco de comentário foi removido para ativar os estilos */
+.filme {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding-top: 120px; /* Espaço para o header */
+    padding-bottom: 40px; /* Espaço antes do rodapé */
+    background: linear-gradient(to bottom, #0b0b0d, #1a0f13);
+}
 
-// .filme5 {
-//     width: 70%;
-//     max-width: 950px;
-//     border-radius: 12px;
-//     outline: none;
-//     box-shadow: 0 0 25px rgba(255, 125, 166, 0.3);
-//     transition: transform 0.3s ease, box-shadow 0.3s ease;
-// }
+.filme5 {
+    width: 70%;
+    max-width: 950px;
+    border-radius: 12px;
+    outline: none;
+    /* Sombra usando a cor principal */
+    box-shadow: 0 0 25px rgba(255, 79, 163, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-// .filme5:hover {
-//     transform: scale(1.02);
-//     box-shadow: 0 0 40px rgba(255, 125, 166, 0.6);
-// }
+.filme5:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 40px rgba(255, 79, 163, 0.6);
+}
 
 /* ========== RODAPÉ ========== */
 .rodape {
     text-align: center;
     padding: 25px;
     background: rgba(0, 0, 0, 0.7);
-    border-top: 1px solid rgba(255, 125, 166, 0.15);
-    color: var(--cinza-secundario);
+    border-top: 1px solid rgba(255, 79, 163, 0.15); /* Cor principal */
+    color: var(--cinza); /* Variável corrigida */
     font-size: 0.9rem;
     letter-spacing: 0.5px;
 }
@@ -126,6 +133,7 @@ body {
     .cabecario__lista {
         gap: 20px;
         padding: 10px;
+        justify-content: space-around; /* Melhora o espaçamento mobile */
     }
 
     .cabecario__link {
@@ -134,5 +142,19 @@ body {
 
     .rodape {
         font-size: 0.8rem;
+    }
+    
+    /* ADICIONADO: Regras do header que estavam no 'media.css' */
+    .container__logo {
+        display: none;
+    }
+
+    .nlogo {
+        display: block; /* Mostra o logo "N" */
+        width: 25px; /* Tamanho ajustado */
+    }
+
+    .mobile__sumir {
+        display: none; /* Esconde "Minha Lista" */
     }
 }

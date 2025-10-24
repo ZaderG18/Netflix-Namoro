@@ -1,0 +1,208 @@
+/* * Conteúdo para o novo arquivo: css/profile.css
+ * Estilos para a tela de escolha de perfil (index.html)
+ */
+
+/* === Variáveis (copiadas do seu style.scss para consistência) === */
+:root {
+    --fundo-principal: #0b0b0d;
+    --rosa-principal: #ff4fa3;
+    --roxo-suave: #b37bff;
+    --branco: #ffffff;
+    --cinza: #cccccc;
+    --cinza-escuro: #1b1b1d;
+    --transicao: 0.3s ease;
+}
+
+/* === Estilos Globais (para index.html) === */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--fundo-principal);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center;   /* Centraliza horizontalmente */
+    min-height: 100vh;     /* Ocupa a altura total da tela */
+    text-align: center;
+}
+
+/* === Estilos da Seção de Escolha === */
+.escolha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.escolha__texto {
+    font-size: 3rem;  /* 48px - Tamanho grande para o título */
+    font-weight: 500;
+    color: var(--branco);
+    margin-top: 0;
+    margin-bottom: 2em; /* Espaço abaixo do título */
+    /* Seu 'media.css' já ajusta isso em telas menores */
+}
+
+.escolha__perfil {
+    display: flex;
+    justify-content: center;
+    gap: 2.5em; /* 40px - Espaço entre os perfis */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap; /* Caso adicione mais perfis */
+}
+
+.escolha__lista {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 180px; /* Largura do item de perfil no desktop */
+}
+
+.perfil {
+    text-decoration: none; /* Remove sublinhado do link */
+    display: block;
+}
+
+.perfil__foto {
+    width: 180px;   /* Largura da foto no desktop */
+    height: 180px;  /* Altura da foto no desktop */
+    border-radius: 8px; /* Bordas levemente arredondadas */
+    object-fit: cover;  /* Garante que a foto preencha o espaço */
+    border: 4px solid transparent; /* Borda "invisível" para o hover */
+    transition: var(--transicao);
+    cursor: pointer;
+    /* Seu 'media.css' já ajusta o tamanho para 100px em telas menores */
+}
+
+/* Estilo específico para a imagem 'Mais-perfil.png' */
+.perfil__foto.mais {
+    background-color: var(--cinza-escuro); /* Fundo escuro para o ícone '+' */
+    object-fit: scale-down; /* Impede que o ícone '+' estique */
+    padding: 40px; /* Ajuste de espaço interno */
+    box-sizing: border-box; /* Garante que o padding não aumente o tamanho */
+}
+
+.perfil__texto {
+    color: var(--cinza);
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-top: 1em;
+    transition: var(--transicao);
+}
+
+/* --- Efeitos de Hover (passar o mouse) --- */
+
+/* Borda branca e zoom ao passar o mouse na foto */
+.perfil:hover .perfil__foto,
+.perfil__foto.mais:hover {
+    border-color: var(--branco);
+    transform: scale(1.05);
+}
+
+/* Fundo mais claro no ícone '+' ao passar o mouse */
+.perfil__foto.mais:hover {
+    background-color: var(--cinza);
+}
+
+/* Texto fica branco ao passar o mouse */
+.perfil:hover .perfil__texto,
+.escolha__lista:hover .perfil__foto.mais + .perfil__texto {
+    color: var(--branco);
+}
+
+/* Botão 'Gerenciar Perfis' */
+.botao {
+    background-color: transparent;
+    border: 1px solid var(--cinza);
+    color: var(--cinza);
+    padding: 12px 35px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 4em; /* Espaço acima do botão */
+    cursor: pointer;
+    transition: var(--transicao);
+    letter-spacing: 1px;
+    text-transform: uppercase; /* Estilo clássico da Netflix */
+}
+
+.botao:hover {
+    background-color: var(--branco);
+    color: var(--fundo-principal); /* Inverte as cores */
+    border-color: var(--branco);
+}
+
+/* Seu arquivo 'media.css' já cuida de esconder
+   o '.celular__cabeca' no desktop e mostrar no celular,
+   então não precisamos mexer nisso. Está perfeito!
+*/
+/* =======================================
+   REGRAS RESPONSIVAS (Movidas do media.css)
+   ======================================= */
+
+/* Esconde o cabeçalho mobile no desktop */
+.celular__cabeca {
+    display: none; 
+}
+
+/* Aplica para tablets e celulares */
+@media (max-width: 768px) {
+    
+    /* Mostra o cabeçalho mobile */
+    .celular__cabeca {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Centraliza melhor */
+        padding: 1em 2em; /* Adiciona espaçamento */
+        width: 100%;
+        box-sizing: border-box; /* Garante que o padding não quebre o layout */
+        position: absolute; /* Põe no topo */
+        top: 0;
+    }
+
+    .celular__logo {
+        width: 100px; /* Tamanho mais proporcional */
+        margin: 0; /* Remove margens estranhas */
+    }
+
+    .celular__edit {
+        width: 25px;
+        height: 25px;
+        margin: 0;
+        cursor: pointer;
+        opacity: 0.8;
+    }
+
+    .celular__edit:hover {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    .escolha__texto {
+        font-size: 2.2rem; /* Um pouco menor para caber */
+        margin-top: 5em; /* Aumenta espaço do topo (por causa do header) */
+    }
+
+    .escolha__perfil {
+        gap: 1.5em; /* Reduz espaço entre perfis */
+    }
+
+    .escolha__lista {
+        width: 120px;
+        margin: 0.5em 1em; /* Ajusta margem */
+    }
+
+    .perfil__foto {
+        width: 120px; /* Ajusta tamanho da foto */
+        height: 120px;
+    }
+    
+    .botao {
+        font-size: 1rem;
+        padding: 10px 25px;
+    }
+}
