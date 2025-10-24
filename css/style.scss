@@ -348,20 +348,47 @@ line-height:0;
     50% { text-shadow: 0 0 20px var(--roxo-suave); }
 }
 
-/* 📱 RESPONSIVIDADE (Unificada) */
+/* ... (Mantenha todo o seu CSS do :root até @keyframes brilho) ... */
+
+
+/* 📱 RESPONSIVIDADE (Aprimorada para todas as telas) */
+
+/* --- 1. Small Desktops / Large Tablets --- */
+/* Ajustes finos para telas um pouco menores que o desktop padrão */
+@media (max-width: 1024px) {
+    header {
+        padding: 20px 40px; /* Um pouco menos de padding */
+    }
+    nav a {
+        margin: 0 15px; /* Um pouco menos de margem */
+    }
+    .hero h1 {
+        font-size: 2.8rem; /* Fonte do Hero um pouco menor */
+    }
+    .secao {
+        padding: 0 40px; /* Padding da seção um pouco menor */
+    }
+    .card-hover-preview {
+        width: 300px; /* Card flutuante um pouco menor */
+    }
+}
+
+
+/* --- 2. Tablets & Small Laptops (Sua quebra principal) --- */
 @media (max-width: 768px) {
-    
+
+    /* --- Cabeçalho --- */
     header {
         padding: 15px 30px;
     }
     nav a {
         margin: 0 10px;
     }
-    /* Esconde o logo grande no mobile (regra do media.css) */
+    /* Esconde o logo grande no mobile */
     .container__logo { 
         display: none;
     }
-    /* Mostra o logo "N" (regra do media.css) */
+    /* Mostra o logo "N" */
     .nlogo {
         display: block;
         width: 20px;
@@ -374,6 +401,7 @@ line-height:0;
         display: none;
     }
 
+    /* --- Hero --- */
     .hero h1 {
         font-size: 2.2rem;
     }
@@ -382,6 +410,7 @@ line-height:0;
                           url('../img/Background-principalMobile.jpg');
     }
 
+    /* --- Seção (Carrossel) --- */
     .secao {
         padding: 0 30px; 
     }
@@ -391,13 +420,69 @@ line-height:0;
         height: 220px;
     }
     
+    /* Desativa o efeito de hover flutuante no mobile */
     .card-hover-preview {
-        display: none; /* Desativa hover flutuante no mobile */
+        display: none; 
     }
+
+    /* Reativa a barra de rolagem e corrige o padding */
     .lista-filmes {
-        overflow-x: auto; /* Reativa barra de rolagem */
+        overflow-x: auto; 
+        padding-top: 10px; /* Remove o padding extra que era para o hover */
+        padding-bottom: 10px;
+        margin-top: 0; /* Remove a margem negativa */
     }
+    
+    /* Esconde os botões (já que temos a barra de rolagem) */
     .btn-carrossel {
-        display: none; /* Esconde setas no mobile */
+        display: none; 
+    }
+}
+
+
+/* --- 3. Small Phones --- */
+/* Ajustes finos para celulares com telas menores */
+@media (max-width: 480px) {
+    
+    /* --- Cabeçalho --- */
+    header {
+        padding: 15px 20px; /* Menos padding */
+    }
+    nav a {
+        margin: 0 8px; /* Menos margem */
+        font-size: 0.9rem;
+    }
+    .logo {
+        font-size: 1.5rem; /* Logo "N♥" menor */
+    }
+
+    /* --- Hero --- */
+    .hero {
+        height: 80vh; /* Altura do hero menor */
+    }
+    .hero h1 {
+        font-size: 1.8rem; /* Fonte bem menor */
+        margin-bottom: 15px;
+    }
+    .hero p {
+        font-size: 1rem; /* Fonte do parágrafo menor */
+        max-width: 90%; /* Garante que não quebre em telas finas */
+    }
+    .btn-assistir {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
+
+    /* --- Seção (Carrossel) --- */
+    .secao {
+        padding: 0 20px; /* Padding mínimo */
+    }
+    .secao h2 {
+        font-size: 1.4rem; /* Título da seção menor */
+    }
+
+    .card-container {
+        min-width: 130px; /* Cards menores */
+        height: 190px;
     }
 }
