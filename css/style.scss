@@ -160,7 +160,11 @@ nav a:hover {
     border-radius: 8px;
     cursor: pointer;
 }
-
+.card-thumbnail-link {
+display: block;
+font-size: 0;
+line-height:0;
+}
 .card-hover-preview {
     position: absolute;
     top: -30%; /* Puxa para cima */
