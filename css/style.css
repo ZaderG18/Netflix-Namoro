@@ -146,6 +146,7 @@ nav a:hover {
 /* --- EFEITOS DE HOVER NO CARD (NOVO) --- */
 .card-container {
   position: relative;
+cursor: pointer;
   min-width: 200px;
   height: 300px;
   transition: var(--transicao);
